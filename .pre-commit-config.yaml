@@ -1,14 +1,24 @@
 repos:
+
+
+# Alternative version including
+
 -   repo: https://github.com/mwouts/jupytext
     rev: v1.14.7  # CURRENT_TAG/COMMIT_HASH
     hooks:
     - id: jupytext
-      args: [--sync, --pipe, black, --pipe-fmt, ".py:percent"]
-      additional_dependencies:
-        - black==23.3.0 # Matches hook
+      args: [--sync]
 
--   repo: https://github.com/psf/black
-    rev: 23.3.0
-    hooks:
-    - id: black
-      language_version: python3
+#-   repo: https://github.com/mwouts/jupytext
+#    rev: v1.14.7  # CURRENT_TAG/COMMIT_HASH
+#    hooks:
+#    - id: jupytext
+#      args: [--sync, --pipe, black, --pipe-fmt, ".py:percent"]
+#      additional_dependencies:
+#        - black==23.3.0 # Matches hook
+
+#-   repo: https://github.com/psf/black
+#    rev: 23.3.0
+#    hooks:
+#    - id: black
+#      language_version: python3
