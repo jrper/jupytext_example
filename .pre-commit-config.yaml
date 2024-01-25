@@ -4,13 +4,13 @@ repos:
 # Alternative version including
 
 -   repo: https://github.com/mwouts/jupytext
-    rev: v1.14.7  # CURRENT_TAG/COMMIT_HASH
+    rev: v1.15.2  # CURRENT_TAG/COMMIT_HASH
     hooks:
     - id: jupytext
       args: [--sync]
 
 #-   repo: https://github.com/mwouts/jupytext
-#    rev: v1.14.7  # CURRENT_TAG/COMMIT_HASH
+#    rev: v1.15.2  # CURRENT_TAG/COMMIT_HASH
 #    hooks:
 #    - id: jupytext
 #      args: [--sync, --pipe, black, --pipe-fmt, ".py:percent"]

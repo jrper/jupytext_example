@@ -1,0 +1,8 @@
+name: jupytext_ex
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+ - notebook
+ - jupytext==1.15.2
+ - pre-commit

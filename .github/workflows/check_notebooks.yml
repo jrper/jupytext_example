@@ -1,0 +1,32 @@
+name: jupytext-changes
+ 
+on:
+  push
+
+jobs:
+  sync-jupytext:
+    runs-on: ubuntu-latest
+    steps:
+ 
+    # Checkout
+    - uses: actions/checkout@v2
+
+    # Grep notebooks for git conflicts
+    - name: Check for conflicts using grep
+      run: grep -r -l '<<<<<<<' notebooks/*.ipynb && exit 1 || exit 0
+
+    # Install Jupytext
+    - name: Install Jupytext
+      run: pip install jupytext==1.15.2
+
+    # Sync
+
+    - name: Sync with Jupytext
+      run: |
+        jupytext --sync notebooks/*.ipynb
+        jupytext --sync raw/*.py
+
+    # Test if there are changes
+
+    - name: Check for changes
+      run: git diff --exit-code
